@@ -1,0 +1,308 @@
+@font-face {
+    font-family: "Super Mario";
+    src: url("chlorinap/CHLORINP.TTF");
+}
+
+body {
+    background-image: url("assets/marioworld.png");
+    overflow-x: hidden;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.sideleft {
+    background-image: url("assets/mario.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 7px;
+}
+
+.sideright {
+    background-image: url("assets/luigi.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.player {
+    border: 2px solid white;
+    border-radius: 30%;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 150px;
+    text-align: center;
+}
+
+#mario {
+    font-family: "Super Mario";
+    color: white;
+    font-size: 40px;
+    background: rgb(223, 32, 32);
+}
+
+#luigi {
+    font-family: "Super Mario";
+    color: white;
+    font-size: 40px;
+    background: rgb(95, 204, 60);
+}
+
+.bounce {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#restartbutton {
+    display: flex;
+    justify-content: center;
+}
+
+#restart {
+    border: 2px solid blue;
+    padding: 10px;
+    background: blue;
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Super Mario";
+    font-size: 60px;
+    color: white;
+}
+
+.board {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.column {
+    display: inline-block;
+    margin: -2px;
+}
+
+.slot {
+    background: blue;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fixhole {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    z-index: 0;
+}
+
+.hole {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-image: url("assets/coin.png");
+    background-size: cover;
+}
+
+.slot.row5 .hole {
+    transform: translateY(-580px);
+    transition: transform 1s;
+}
+
+.slot.row4 .hole {
+    transform: translateY(-490px);
+    transition: transform 1s;
+}
+
+.slot.row3 .hole {
+    transform: translateY(-400px);
+    transition: transform 1s;
+}
+
+.slot.row2 .hole {
+    transform: translateY(-310px);
+    transition: transform 1s;
+}
+
+.slot.row1 .hole {
+    transform: translateY(-220px);
+    transition: transform 1s;
+}
+
+.slot.row0 .hole {
+    transform: translateY(-130px);
+    transition: transform 1s;
+}
+
+.pred.row5 .hole {
+    background: rgb(223, 32, 32);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pgreen.row5 .hole {
+    background: rgb(95, 204, 60);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pred.row4 .hole {
+    background: rgb(223, 32, 32);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pgreen.row4 .hole {
+    background: rgb(95, 204, 60);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pred.row3 .hole {
+    background: rgb(223, 32, 32);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pgreen.row3 .hole {
+    background: rgb(95, 204, 60);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pred.row2 .hole {
+    background: rgb(223, 32, 32);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pgreen.row2 .hole {
+    background: rgb(95, 204, 60);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pred.row1 .hole {
+    background: rgb(223, 32, 32);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pgreen.row1 .hole {
+    background: rgb(95, 204, 60);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pred.row0 .hole {
+    background: rgb(223, 32, 32);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.pgreen.row0 .hole {
+    background: rgb(95, 204, 60);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.mariowins {
+    font-family: "Super Mario";
+    font-size: 270px;
+    color: white;
+    background: rgb(223, 32, 32);
+    border: 10px dashed white;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    transform: translateX(-110%);
+    transition: transform 1s;
+}
+
+.luigiwins {
+    font-family: "Super Mario";
+    font-size: 270px;
+    color: white;
+    background: rgb(95, 204, 60);
+    border: 10px dashed white;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    transform: translateX(110%);
+    transition: transform 1s;
+}
+
+.winner {
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.mariostarts {
+    font-family: "Super Mario";
+    font-size: 60px;
+    border: 3px white;
+    color: white;
+    background: rgb(223, 32, 32);
+    width: 300px;
+    border-radius: 40px;
+    position: absolute;
+    top: 250px;
+    z-index: 2;
+    transform: translateX(-1000px);
+}
+
+.luigistarts {
+    font-family: "Super Mario";
+    font-size: 60px;
+    border: 3px white;
+    color: white;
+    background: rgb(95, 204, 60);
+    width: 300px;
+    border-radius: 40px;
+    position: absolute;
+    top: 250px;
+    z-index: 2;
+    transform: translateX(-1000px);
+}
+
+.start {
+    animation-name: right;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes right {
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
+}
