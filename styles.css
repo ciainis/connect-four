@@ -1,308 +1,343 @@
 @font-face {
-    font-family: "Super Mario";
-    src: url("chlorinap/CHLORINP.TTF");
+  font-family: 'Super Mario';
+  src: url('chlorinap/CHLORINP.TTF');
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-    background-image: url("assets/marioworld.png");
-    overflow-x: hidden;
+  background-image: url('assets/marioworld.png');
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.gameContainer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.game-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-.sideleft {
-    background-image: url("assets/mario.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-right: 7px;
+.game-container__left,
+.game-container__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.sideright {
-    background-image: url("assets/luigi.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+/* PLAYERS */
+
+.player__img {
+  height: 35rem;
+  width: auto;
+  margin-bottom: 3rem;
 }
 
-.player {
-    border: 2px solid white;
-    border-radius: 30%;
-    padding: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 150px;
-    text-align: center;
+.player__name {
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: 'Super Mario';
+  font-size: 4rem;
+  border-radius: 3px;
+  padding: 1rem;
+  margin: 0 2rem;
+  width: 20rem;
+  text-align: center;
 }
 
 #mario {
-    font-family: "Super Mario";
-    color: white;
-    font-size: 40px;
-    background: rgb(223, 32, 32);
+  background: rgb(223, 32, 32);
 }
 
 #luigi {
-    font-family: "Super Mario";
-    color: white;
-    font-size: 40px;
-    background: rgb(95, 204, 60);
+  background: rgb(95, 204, 60);
 }
 
 .bounce {
-    animation-name: bounce;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
 }
 
 @keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(30px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-#restartbutton {
-    display: flex;
-    justify-content: center;
+/* START BUTTON */
+
+.start__btn-container {
+  margin-top: 1rem;
 }
 
-#restart {
-    border: 2px solid blue;
-    padding: 10px;
-    background: blue;
-    margin-top: 10px;
-    text-align: center;
-    font-family: "Super Mario";
-    font-size: 60px;
-    color: white;
+.start__btn {
+  border: 2px solid #0000ff;
+  padding: 1rem;
+  background: #0000ff;
+  text-align: center;
+  font-family: 'Super Mario';
+  font-size: 6rem;
+  color: #fff;
+  cursor: pointer;
+  width: 50rem;
+  margin: auto;
 }
+
+/* BOARD */
 
 .board {
-    display: inline-block;
-    margin-top: 20px;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 .column {
-    display: inline-block;
-    margin: -2px;
+  display: inline-block;
+  margin: -2px;
 }
 
 .slot {
-    background: blue;
-    height: 90px;
-    width: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #0000ff;
+  height: 9rem;
+  width: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fixhole {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    background: white;
-    position: absolute;
-    z-index: 0;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  position: absolute;
+  z-index: 0;
 }
 
 .hole {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    background-image: url("assets/coin.png");
-    background-size: cover;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  background-image: url('assets/coin.png');
+  background-size: cover;
 }
 
 .slot.row5 .hole {
-    transform: translateY(-580px);
-    transition: transform 1s;
+  transform: translateY(-100rem);
+  transition: transform 1s;
 }
 
 .slot.row4 .hole {
-    transform: translateY(-490px);
-    transition: transform 1s;
+  transform: translateY(-100rem);
+  transition: transform 1s;
 }
 
 .slot.row3 .hole {
-    transform: translateY(-400px);
-    transition: transform 1s;
+  transform: translateY(-100rem);
+  transition: transform 1s;
 }
 
 .slot.row2 .hole {
-    transform: translateY(-310px);
-    transition: transform 1s;
+  transform: translateY(-100rem);
+  transition: transform 1s;
 }
 
 .slot.row1 .hole {
-    transform: translateY(-220px);
-    transition: transform 1s;
+  transform: translateY(-100rem);
+  transition: transform 1s;
 }
 
 .slot.row0 .hole {
-    transform: translateY(-130px);
-    transition: transform 1s;
+  transform: translateY(-100rem);
+  transition: transform 1s;
 }
 
 .pred.row5 .hole {
-    background: rgb(223, 32, 32);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(223, 32, 32);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pgreen.row5 .hole {
-    background: rgb(95, 204, 60);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(95, 204, 60);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pred.row4 .hole {
-    background: rgb(223, 32, 32);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(223, 32, 32);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pgreen.row4 .hole {
-    background: rgb(95, 204, 60);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(95, 204, 60);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pred.row3 .hole {
-    background: rgb(223, 32, 32);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(223, 32, 32);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pgreen.row3 .hole {
-    background: rgb(95, 204, 60);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(95, 204, 60);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pred.row2 .hole {
-    background: rgb(223, 32, 32);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(223, 32, 32);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pgreen.row2 .hole {
-    background: rgb(95, 204, 60);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(95, 204, 60);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pred.row1 .hole {
-    background: rgb(223, 32, 32);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(223, 32, 32);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pgreen.row1 .hole {
-    background: rgb(95, 204, 60);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(95, 204, 60);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pred.row0 .hole {
-    background: rgb(223, 32, 32);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(223, 32, 32);
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .pgreen.row0 .hole {
-    background: rgb(95, 204, 60);
-    transform: translateY(0);
-    z-index: 1;
+  background: rgb(95, 204, 60);
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.mariowins,
+.luigiwins {
+  font-family: 'Super Mario';
+  font-size: 27rem;
+  color: white;
+  border: 10px dashed white;
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  transform: translateX(-110%);
+  transition: transform 1s;
 }
 
 .mariowins {
-    font-family: "Super Mario";
-    font-size: 270px;
-    color: white;
-    background: rgb(223, 32, 32);
-    border: 10px dashed white;
-    display: inline-block;
-    position: absolute;
-    left: 5px;
-    right: 5px;
-    transform: translateX(-110%);
-    transition: transform 1s;
+  background: rgb(223, 32, 32);
 }
 
 .luigiwins {
-    font-family: "Super Mario";
-    font-size: 270px;
-    color: white;
-    background: rgb(95, 204, 60);
-    border: 10px dashed white;
-    display: inline-block;
-    position: absolute;
-    left: 5px;
-    right: 5px;
-    transform: translateX(110%);
-    transition: transform 1s;
+  background: rgb(95, 204, 60);
 }
 
 .winner {
-    transform: translateX(0);
-    z-index: 2;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.mariostarts,
+.luigistarts {
+  font-family: 'Super Mario';
+  font-size: 6rem;
+  border: 3px white;
+  color: white;
+  width: 30rem;
+  border-radius: 4rem;
+  position: absolute;
+  top: 2.5rem;
+  z-index: 2;
+  transform: translateX(-100rem);
 }
 
 .mariostarts {
-    font-family: "Super Mario";
-    font-size: 60px;
-    border: 3px white;
-    color: white;
-    background: rgb(223, 32, 32);
-    width: 300px;
-    border-radius: 40px;
-    position: absolute;
-    top: 250px;
-    z-index: 2;
-    transform: translateX(-1000px);
+  background: rgb(223, 32, 32);
 }
 
 .luigistarts {
-    font-family: "Super Mario";
-    font-size: 60px;
-    border: 3px white;
-    color: white;
-    background: rgb(95, 204, 60);
-    width: 300px;
-    border-radius: 40px;
-    position: absolute;
-    top: 250px;
-    z-index: 2;
-    transform: translateX(-1000px);
+  background: rgb(95, 204, 60);
 }
 
 .start {
-    animation-name: right;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
+  animation-name: right;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes right {
-    50% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(1000px);
-    }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1000px);
+  }
+}
+
+@media (max-width: 1120px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 40%;
+  }
+
+  .game-container {
+    margin-top: 20rem;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 30%;
+  }
+
+  .game-container {
+    margin-top: 20rem;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+    font-size: 30%;
+  }
+
+  body {
+    margin-top: 20rem;
+    width: 650px;
+    overflow: hidden;
+  }
 }

@@ -1,4 +1,4 @@
 import { play, restart } from './play.js';
 
-$(".column").on("click", play);
-$("#restart").on("click", restart);
+$('.column').on('click', play);
+$('.start__btn').on('click', restart);

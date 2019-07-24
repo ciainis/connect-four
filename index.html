@@ -6,14 +6,19 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="gameContainer">
+        <div class="game-container">
             <div class="mariowins">MARIO WINS!!!</div>
             <div class="luigiwins">LUIGI WINS!!!</div>
             <div class="mariostarts">MARIO STARTS</div>
             <div class="luigistarts">LUIGI STARTS</div>
-            <div class="sideleft">
-                <div class="player" id="mario">MARIO</div>
+
+            <div class="game-container__left">
+                <div class="player__img-container">
+                    <img class="player__img" src="assets/mario.png" alt="">
+                </div>
+                <div class="player__name" id="mario">MARIO</div>
             </div>
+
             <div class="board">
                 <div class="column">
                     <div class="slot row0">
@@ -198,13 +203,19 @@
                     </div>
                 </div>
             </div>
-            <div class="sideright">
-                <div class="player" id="luigi">LUIGI</div>
+            
+            <div class="game-container__right">
+                <div class="player__img-container">
+                    <img class="player__img" src="assets/luigi.png" alt="">
+                </div>
+                <div class="player__name" id="luigi">LUIGI</div>
             </div>
         </div>
-        <div id="restartbutton">
-            <div id="restart">NEW GAME</div>
+
+        <div class="start__btn-container">
+            <div class="start__btn">NEW GAME</div>
         </div>
+
         <audio id="mariotheme">
             <source src="assets/supermarioTheme.mp3" type="audio/mpeg">
         </audio>
