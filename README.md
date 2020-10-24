@@ -1,13 +1,17 @@
 # Connect 4
-Connect 4 game inspired my Super Mario Bros. 
+Connect 4 game with Super Mario Bros theme.
 
 ## Built with
-
 * HTML
 * CSS
 * JavaScript
 * jQuery
 
-## Demo
+## Play
+![https://mariobros-connect-four.netlify.app/](https://mariobros-connect-four.netlify.app/)
 
-![Connect-4-Demo](assets/gif.gif)
+## Installing
+To install the game on your local machine, simply clone the repo and run the project on a local server.
+
+## License
+This work is licensed under MIT License.
