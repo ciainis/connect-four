@@ -8,7 +8,7 @@ Connect 4 game with Super Mario Bros theme.
 * jQuery
 
 ## Play
-[https://mariobros-connect-four.netlify.app/]
+https://mariobros-connect-four.netlify.app/
 
 ## Installing
 To install the game on your local machine, simply clone the repo and run the project on a local server.
